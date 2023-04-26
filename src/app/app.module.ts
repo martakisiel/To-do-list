@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskListModule } from './task-list/task-list.module';
+import { CalendarModule } from './calendar/calendar.module';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -11,7 +13,9 @@ import { TaskListModule } from './task-list/task-list.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TaskListModule
+    TaskListModule,
+    CalendarModule
+    // BrowserAnimationsModule //remove it from here to calendar module
   ],
   providers: [],
   bootstrap: [AppComponent]

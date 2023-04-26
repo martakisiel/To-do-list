@@ -14,5 +14,5 @@ export class AppComponent {
   //   "wash the dishes",
   //   "go for a walk"
   // ]
-  title = 'todoList';
+  title = 'Todo List';
 }

@@ -1,0 +1,18 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: black;
+    color: aliceblue;
+    width: 100px;
+    height: 60px;
+    font-size: large;
+    cursor: pointer;
+}
+
+mat-calendar{
+    width: 500px;
+}
