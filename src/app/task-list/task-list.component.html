@@ -1,4 +1,3 @@
-
 <!--The app is created during the course: Angular Tutorial for Beginners - Learn Angular 14 Frontend Development developed by tutorialsEU-->
 <!--https://www.youtube.com/watch?v=WaT_yGzm47I-->
 <!--https://github.com/tutorialseu/angular-course-todo-list-app-->
@@ -7,25 +6,28 @@
   <div class="todo-list">
 
     <div class="input-group">
-      <input type="text" placeholder="Add new task" #newTask>
-      <button (click)="add(newTask.value)" class="add-button">+</button> <!--click-event, when it is triggered the function "add()" is called = EVENT BIDING-->
+      <input type="text" placeholder="Add new task" (keyup.enter)="add(newTask.value)" #newTask>
+      <button (click)="add(newTask.value)" class="add-button">+</button>
+      <!--click-event, when it is triggered the function "add()" is called = EVENT BIDING-->
     </div>
     <table>
-      <tr *ngFor="let task of tasks; let i=index" [class.even]="i%2==0" [class.odd]="i%2"> <!--creating For loop; adding i variable helps to determine if the number of row is even or odd-->
-       <td>
-        <span [class.is-done]="task.isDone"> <!--assign is-done Css class when the property of task.isDone is set to TRUE-->
-          {{task.title}} <!--calling array task--><!--.title ważne!-->
-         <!-- {{task[0]}} //here we bind html with item (value 1) in the array task[] -->
-        </span>
-       </td>
-       <td>
-        <button (click)="remove(task)" class="remove-button">X</button>
-        <button (click)="task.toggleIsDone()" class="done-button">
-          <!--Done-->
-          <!--instead of single Done button use a boolean binding exxperssion to make it more responsive-->
-          {{task.isDone? "Undo":"Done"}}
-        </button>
-       </td> 
+      <tr *ngFor="let task of tasks; let i=index" [class.even]="i%2==0" [class.odd]="i%2">
+        <!--creating For loop; adding i variable helps to determine if the number of row is even or odd-->
+        <td>
+          <span [class.is-done]="task.isDone">
+            <!--assign is-done Css class when the property of task.isDone is set to TRUE-->
+            {{task.title}} <!--calling array task--><!--.title ważne!-->
+            <!-- {{task[0]}} //here we bind html with item (value 1) in the array task[] -->
+          </span>
+        </td>
+        <td>
+          <button (click)="remove(task)" class="remove-button">X</button>
+          <button (click)="task.toggleIsDone()" class="done-button">
+            <!--Done-->
+            <!--instead of single Done button use a boolean binding exxperssion to make it more responsive-->
+            {{task.isDone? "Undo":"Done"}}
+          </button>
+        </td>
       </tr>
       <!--instead of listing all elements we can apply a loop that will create row <tr> elements for each array item: *ng For=-->
       <!-- <tr class="odd">
@@ -49,7 +51,7 @@
          <button class="remove-button">X</button>
          <button class="done-button">Done</button>
         </td>  -->
-       
+
     </table>
   </div>
 

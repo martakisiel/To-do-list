@@ -9,7 +9,7 @@ import { ActivatedRoute, Route } from '@angular/router';
 export class TaskListComponent implements OnInit{
   constructor(private route: ActivatedRoute){}
   ngOnInit(): void{
-    var date: Date = new Date(this.route.snapshot.params['date']); //Now the task-list know which date was clicked before
+    var date: Date = new Date(this.route.snapshot.params['date']); //Now the task-list know which date was clicked
     console.log(date);
 
   }
